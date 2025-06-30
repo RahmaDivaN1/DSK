@@ -1,0 +1,80 @@
+#include <cstdlib>     // Library untuk fungsi system(), EXIT_SUCCESS
+#include <iostream>    // Library input/output
+#include <string>      // Library untuk string
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+    string kata1;       // Variabel string titik pertama
+    string kata2;       // Variabel string titik kedua
+    string kata3;       // Variabel string titik ketiga
+    string kata4;       // Variabel string titik keempat
+
+    int a, b, c, d;     // Variabel jarak antar titik
+
+    // Input nama titik pertama
+    cout << "Masukkan titik pertama: ";
+    cin >> kata1;
+    cout << endl;
+
+    // Input nama titik kedua
+    cout << "Masukkan titik kedua: ";
+    cin >> kata2;
+    cout << endl;
+
+    // Input nama titik ketiga
+    cout << "Masukkan titik ketiga: ";
+    cin >> kata3;
+    cout << endl;
+
+    // Input nama titik keempat
+    cout << "Masukkan titik keempat: ";
+    cin >> kata4;
+    cout << endl;
+
+    // Menampilkan garis yang dapat dibentuk
+    cout << "Garis yang dapat dibentuk adalah: " << endl;
+    cout << kata1 << " - " << kata4 << endl;
+    cout << kata4 << " - " << kata3 << endl;
+    cout << kata3 << " - " << kata2 << endl;
+    cout << kata2 << " - " << kata1 << endl << endl;
+
+    // Input jarak antar titik
+    cout << "Masukkan jarak antara titik simpul " << kata1 << " dengan " << kata4 << " : ";
+    cin >> a;
+
+    cout << "Masukkan jarak antara titik simpul " << kata4 << " dengan " << kata3 << " : ";
+    cin >> b;
+
+    cout << "Masukkan jarak antara titik simpul " << kata3 << " dengan " << kata2 << " : ";
+    cin >> c;
+
+    cout << "Masukkan jarak antara titik simpul " << kata2 << " dengan " << kata1 << " : ";
+    cin >> d;
+
+    cout << endl << endl;
+
+    // Menampilkan total jarak keseluruhan
+    cout << "Jadi panjang jarak totalnya = " << a + b + c + d << endl << endl;
+
+    // Menampilkan informasi jalur terpendek
+    cout << "Mencari jalur terpendek dari " << kata1 << " menuju " << kata4 << " :" << endl;
+
+    // Asumsikan jalur terpendek: titik1 -> titik4 langsung
+    cout << "Alternatif 1 (langsung): " << kata1 << " -> " << kata4
+         << " = " << a << endl;
+
+    // Alternatif melewati dua simpul lain: titik1 -> titik2 -> titik3 -> titik4
+    int jalur2 = d + c + b;
+    cout << "Alternatif 2: " << kata1 << " -> " << kata2 << " -> "
+         << kata3 << " -> " << kata4
+         << " = " << d << " + " << c << " + " << b << " = " << jalur2 << endl;
+
+    // Mengubah warna konsol
+    system("color f0");
+
+    // Menunggu user tekan tombol
+    system("PAUSE");
+
+    return EXIT_SUCCESS;
+}
